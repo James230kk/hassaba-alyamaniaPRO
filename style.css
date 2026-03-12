@@ -23,7 +23,7 @@ body {
   margin: 10px auto;
 }
 
-/* صورة اليمن على اليمين */
+/* الصورة اليمنية على اليمين (قصر بُكشان) */
 .asib-right {
   position: fixed;
   right: 0;
@@ -39,7 +39,7 @@ body {
   box-shadow: 0 0 20px #0005;
 }
 
-/* صورة اليمن على اليسار */
+/* الصورة اليمنية على اليسار (المدينة الطينية) */
 .asib-left {
   position: fixed;
   left: 0;
