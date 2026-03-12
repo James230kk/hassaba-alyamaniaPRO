@@ -1,58 +1,90 @@
-<html>
-	<head>
-		<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voice Trigonometry Calculator</title>
-  <link rel="stylesheet" href="styles.css">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
-		<title>A simple calculator</title>
-	</head>
-	<body>
-		<div id="container">
-			<div id="calculator">
-				<div id="result">
-					<div id="output-text">
-						<div id="history">
-							<p id="history-value"></p>
-						</div>
-						<div id="output">
-							<p id="output-value"></p>
-						</div>
-					</div>
-					<div id="output-microphone">
-						<span id="microphone">
-						</span>
-						<span class="tooltip">Operations are plus, minus, multiply, divide &amp; reminder
-						The user input format is number + operation + number<br><br>
-						Eg: 2 multiply 5 will be 2 &times 5
-						</span>
-					</div>
-				</div>
-				<div id="keyboard">
-					<button class="operator" id="clear">C</button>
-					<button class="operator" id="backspace">CE</button>
-					<button class="operator" id="%">%</button>
-					<button class="operator" id="/">&#247;</button>
-					<button class="number" id="7">7</button>
-					<button class="number" id="8">8</button>
-					<button class="number" id="9">9</button>
-					<button class="operator" id="*">&times;</button>
-					<button class="number" id="4">4</button>
-					<button class="number" id="5">5</button>
-					<button class="number" id="6">6</button>
-					<button class="operator" id="-">-</button>
-					<button class="number" id="1">1</button>
-					<button class="number" id="2">2</button>
-					<button class="number" id="3">3</button>
-					<button class="operator" id="+">+</button>
-					<button class="empty" id="empty"></button>
-					<button class="number" id="0">0</button>
-					<button class="empty" id="empty"></button>
-					<button class="operator" id="=">=</button>
-				</div>
-			</div>
-		</div>
-		<script src="script.js"></script>	
-	</body>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الآلة الحاسبة اليمنية</title>
+
+    <!-- خطوط عربية -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri:wght@700&display=swap" rel="stylesheet">
+
+    <!-- ملف الستايل -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- علم اليمن -->
+    <div style="text-align:center; margin-top:20px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Yemen.svg" 
+             alt="علم اليمن" 
+             style="width:160px; border:3px solid #d4af37; border-radius:6px;">
+    </div>
+
+    <!-- العسيب اليمني -->
+    <div style="text-align:center; margin:15px 0;">
+        <img src="https://i.imgur.com/4p0yQ0C.png" 
+             alt="العسيب اليمني" 
+             style="width:200px;">
+    </div>
+
+    <h1>الآلة الحاسبة اليمنية</h1>
+
+    <div id="container">
+        <div id="calculator">
+
+            <div id="result">
+                <div id="output-text">
+                    <div id="history">
+                        <p id="history-value"></p>
+                    </div>
+
+                    <div id="output">
+                        <p id="output-value"></p>
+                    </div>
+                </div>
+
+                <div id="output-microphone">
+                    <span id="microphone"></span>
+
+                    <span class="tooltip">
+                        العمليات المدعومة: زائد، ناقص، ضرب، قسمة، باقي القسمة<br><br>
+                        مثال: ٢ ضرب ٥ = ٢ × ٥
+                    </span>
+                </div>
+            </div>
+
+            <div id="keyboard">
+                <button class="operator" id="clear">C</button>
+                <button class="operator" id="backspace">CE</button>
+                <button class="operator" id="%">%</button>
+                <button class="operator" id="/">÷</button>
+
+                <button class="number" id="7">7</button>
+                <button class="number" id="8">8</button>
+                <button class="number" id="9">9</button>
+                <button class="operator" id="*">×</button>
+
+                <button class="number" id="4">4</button>
+                <button class="number" id="5">5</button>
+                <button class="number" id="6">6</button>
+                <button class="operator" id="-">-</button>
+
+                <button class="number" id="1">1</button>
+                <button class="number" id="2">2</button>
+                <button class="number" id="3">3</button>
+                <button class="operator" id="+">+</button>
+
+                <button class="empty"></button>
+                <button class="number" id="0">0</button>
+                <button class="empty"></button>
+                <button class="operator" id="=">=</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
 </html>
