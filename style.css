@@ -1,4 +1,3 @@
-/* خلفية يمنية بسيطة */
 body {
   font-family: "Cairo", sans-serif;
   background: #f5f1e6;
@@ -6,24 +5,9 @@ body {
   padding: 0;
   direction: rtl;
   text-align: center;
-  color: #2e2e2e;
 }
 
-/* علم اليمن */
-.flag {
-  width: 170px;
-  border: 3px solid #d4af37;
-  border-radius: 6px;
-  margin-top: 20px;
-}
-
-/* زخارف يمنية */
-.decor-top, .decor-bottom {
-  width: 260px;
-  margin: 10px auto;
-}
-
-/* الصورة اليمنية على اليمين (قصر بُكشان) */
+/* الصور اليمنية على الجوانب */
 .asib-right {
   position: fixed;
   right: 0;
@@ -39,7 +23,6 @@ body {
   box-shadow: 0 0 20px #0005;
 }
 
-/* الصورة اليمنية على اليسار (المدينة الطينية) */
 .asib-left {
   position: fixed;
   left: 0;
@@ -55,21 +38,45 @@ body {
   box-shadow: 0 0 20px #0005;
 }
 
-/* الحاوية */
-#container {
-  display: flex;
-  justify-content: center;
+/* الإطار الذهبي */
+.gold-frame {
+  width: 450px;
+  margin: 40px auto;
+  padding: 25px;
+  border: 12px solid transparent;
+  border-image: linear-gradient(135deg, #d4af37, #b8860b, #f7d774, #d4af37) 1;
+  border-radius: 22px;
+  background: #fffdf7;
+  box-shadow: 0 0 25px #0005, inset 0 0 15px #d4af37;
+}
+
+/* النص العلوي */
+.frame-top-text {
+  font-size: 28px;
+  font-weight: bold;
+  color: #b8860b;
+  margin-bottom: 20px;
+  text-shadow: 0 0 6px #d4af37;
+}
+
+/* النص السفلي */
+.frame-bottom-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: #b8860b;
   margin-top: 20px;
+  text-shadow: 0 0 6px #d4af37;
 }
 
 /* صندوق الآلة */
 #calculator {
   background: #ffffff;
-  padding: 25px;
-  width: 380px;
-  border-radius: 14px;
-  border: 4px solid #d4af37;
-  box-shadow: 0 0 20px #0004;
+  padding: 20px;
+  width: 360px;
+  margin: auto;
+  border-radius: 12px;
+  border: 3px solid #d4af37;
+  box-shadow: 0 0 15px #0003;
 }
 
 /* شاشة التاريخ */
@@ -111,26 +118,6 @@ body {
 
 #microphone:hover {
   transform: scale(1.12);
-}
-
-/* تأثير التسجيل */
-.record {
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0px #d4af37; }
-  50% { box-shadow: 0 0 20px #d4af37; }
-  100% { box-shadow: 0 0 0px #d4af37; }
-}
-
-/* التولتيب */
-.tooltip {
-  display: block;
-  font-size: 14px;
-  color: #444;
-  margin-top: 10px;
-  line-height: 1.6;
 }
 
 /* لوحة الأزرار */
