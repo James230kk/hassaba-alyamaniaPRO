@@ -6,7 +6,7 @@ const resultDiv = document.getElementById("result");
 
 if (!SpeechRecognition) {
   startBtn.disabled = true;
-  startBtn.textContent = " يا مختار المحندر المتصفح لا يدعم التعرف على الصوت";
+  startBtn.textContent = "يا مختار المحندر المتصفح لا يدعم التعرف على الصوت";
 } else {
   const recognition = new SpeechRecognition();
   recognition.lang = "ar-SA";
@@ -25,17 +25,19 @@ if (!SpeechRecognition) {
     // تحويل الكلمات العربية إلى رموز
     text = text.replace(/زائد|جمع/g, "+");
     text = text.replace(/ناقص|طرح/g, "-");
-    text = text.replace(/ضرب|في/g, "×");
-    text = text.replace(/قسمة|على/g, "÷");
+    text = text.replace(/ضرب|في/g, "*");
+    text = text.replace(/قسمة|على/g, "/");
 
     // إزالة أي شيء غير مسموح
-    const safe = text.replace(/[^0-9+\-×/().]/g, "");
+    const safe = text.replace(/[^0-9+\-*/().]/g, "");
 
     try {
       const result = Function(`return (${safe})`)();
-      resultDiv.textContent = isNaN(result) ? " يا مختار المحندر للأسف الشديد ما قدرت أحسب العملية" : result;
+      resultDiv.textContent = isNaN(result)
+        ? "يا مختار المحندر للأسف الشديد ما قدرت أحسب العملية"
+        : result;
     } catch {
-      resultDiv.textContent = " يا مختار المحندر خطأ في الحساب";
+      resultDiv.textContent = "يا مختار المحندر خطأ في الحساب";
     }
   });
 
