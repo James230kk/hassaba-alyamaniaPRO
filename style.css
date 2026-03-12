@@ -1,11 +1,11 @@
-/* خلفية صنعانية */
+/* خلفية يمنية بسيطة */
 body {
   font-family: "Cairo", sans-serif;
-  background: #f3efe2;
-  direction: rtl;
-  text-align: center;
+  background: #f5f1e6;
   margin: 0;
   padding: 0;
+  direction: rtl;
+  text-align: center;
   color: #2e2e2e;
 }
 
@@ -17,42 +17,42 @@ body {
   margin-top: 20px;
 }
 
-/* زخارف يمنية فوق وتحت */
+/* زخارف يمنية */
 .decor-top, .decor-bottom {
   width: 260px;
   margin: 10px auto;
 }
 
-/* الصورة اليمنية على اليمين (قصر بُكشان) */
+/* صورة اليمن على اليمين */
 .asib-right {
   position: fixed;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 180px;
-  height: 420px;
+  width: 200px;
+  height: 450px;
   background-image: url("https://i.postimg.cc/xJPtk3Nh/undefined-Imgur.jpg");
   background-size: cover;
   background-position: center;
-  border-left: 4px solid #d4af37;
-  border-radius: 10px 0 0 10px;
-  box-shadow: 0 0 15px #0004;
+  border-left: 5px solid #d4af37;
+  border-radius: 12px 0 0 12px;
+  box-shadow: 0 0 20px #0005;
 }
 
-/* الصورة اليمنية على اليسار (المدينة الطينية) */
+/* صورة اليمن على اليسار */
 .asib-left {
   position: fixed;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 180px;
-  height: 420px;
+  width: 200px;
+  height: 450px;
   background-image: url("https://i.postimg.cc/1nKJgrNP/Yemen-Imgur.jpg");
   background-size: cover;
   background-position: center;
-  border-right: 4px solid #d4af37;
-  border-radius: 0 10px 10px 0;
-  box-shadow: 0 0 15px #0004;
+  border-right: 5px solid #d4af37;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 0 20px #0005;
 }
 
 /* الحاوية */
@@ -65,11 +65,11 @@ body {
 /* صندوق الآلة */
 #calculator {
   background: #ffffff;
-  padding: 20px;
-  width: 360px;
-  border-radius: 12px;
-  border: 3px solid #d4af37;
-  box-shadow: 0 0 15px #0003;
+  padding: 25px;
+  width: 380px;
+  border-radius: 14px;
+  border: 4px solid #d4af37;
+  box-shadow: 0 0 20px #0004;
 }
 
 /* شاشة التاريخ */
@@ -89,28 +89,28 @@ body {
   background: #fff;
   border: 2px solid #0f5132;
   padding: 12px;
-  min-height: 35px;
+  min-height: 40px;
   border-radius: 6px;
   color: #0f5132;
-  font-size: 28px;
+  font-size: 30px;
   text-align: left;
   margin-top: 10px;
 }
 
-/* المايك */
+/* زر المايك */
 #microphone {
   display: inline-block;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   background: linear-gradient(135deg, #0f5132, #198754);
   border-radius: 50%;
-  margin-top: 10px;
+  margin-top: 12px;
   cursor: pointer;
   transition: 0.2s;
 }
 
 #microphone:hover {
-  transform: scale(1.1);
+  transform: scale(1.12);
 }
 
 /* تأثير التسجيل */
@@ -120,17 +120,17 @@ body {
 
 @keyframes pulse {
   0% { box-shadow: 0 0 0px #d4af37; }
-  50% { box-shadow: 0 0 15px #d4af37; }
+  50% { box-shadow: 0 0 20px #d4af37; }
   100% { box-shadow: 0 0 0px #d4af37; }
 }
 
 /* التولتيب */
 .tooltip {
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   color: #444;
   margin-top: 10px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* لوحة الأزرار */
@@ -138,14 +138,14 @@ body {
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  gap: 10px;
 }
 
 /* الأزرار */
 button, .operator, .number, .empty {
-  height: 55px;
-  font-size: 20px;
-  border-radius: 8px;
+  height: 60px;
+  font-size: 22px;
+  border-radius: 10px;
   border: 2px solid #0f5132;
   background: #fff;
   color: #0f5132;
@@ -156,7 +156,7 @@ button, .operator, .number, .empty {
 button:hover, .operator:hover, .number:hover {
   background: #0f5132;
   color: #fff;
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* زر فارغ */
