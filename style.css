@@ -1,138 +1,126 @@
-body{
-	font-family: 'Open Sans',sans-serif;
-	background-color: black;
+function getHistory(){
+	return document.getElementById("history-value").innerText;
 }
-#container{
-	width: 1000px;
-	height: 550px;
-	background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(bgImg.jpg);
-	margin: 20px auto;	
+function printHistory(num){
+	document.getElementById("history-value").innerText=num;
 }
-#calculator{
-	width: 320px;
-	height: 520px;
-	background-color: #eaedef;
-	margin: 0 auto;
-	top: 20px;
-	position: relative;
-	border-radius: 5px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+function getOutput(){
+	return document.getElementById("output-value").innerText;
 }
-#result{
-	height: 120px;
-}
-#history{
-	text-align: right;
-	height: 20px;
-	margin: 0 20px;
-	padding-top: 20px;
-	font-size: 15px;
-	color: #919191;
-}
-#output{
-	text-align: right;
-	height: 60px;
-	margin: 10px 20px;
-	font-size: 30px;
-}
-#output-text{
-	width: 250px;
-	height: 120px;
-	float: left;
-}
-#microphone{
-	height: 30px;
-	width: 30px;
-	float: right;
-	background-image: url(mic.png);
-	background-size: 100% 100%;
-	border-radius: 50%;
-	margin: 20px;
-	margin-top: 45px;
-}
-.record{	
-	animation: microphone-animation 1.5s infinite;
-}
-@keyframes microphone-animation{
-	0%{
-		transform: scale(0.9);
+function printOutput(num){
+	if(num==""){
+		document.getElementById("output-value").innerText=num;
 	}
-	70%{
-		transform: scale(1);
-		box-shadow: 0 0 0 10px rgba(0,148,255,0.4);
-		
+	else{
+		document.getElementById("output-value").innerText=getFormattedNumber(num);
+	}	
+}
+function getFormattedNumber(num){
+	if(num=="-"){
+		return "";
 	}
-	100%{
-		transform: scale(0.9);
-		box-shadow: 0 0 0 0 rgba(0,148,255,0);
+	var n = Number(num);
+	var value = n.toLocaleString("en");
+	return value;
+}
+function reverseNumberFormat(num){
+	return Number(num.replace(/,/g,''));
+}
+
+var operator = document.getElementsByClassName("operator");
+for(var i =0;i<operator.length;i++){
+	operator[i].addEventListener('click',function(){
+		if(this.id=="clear"){
+			printHistory("");
+			printOutput("");
+		}
+		else if(this.id=="backspace"){
+			var output=reverseNumberFormat(getOutput()).toString();
+			if(output){
+				output= output.substr(0,output.length-1);
+				printOutput(output);
+			}
+		}
+		else{
+			var output=getOutput();
+			var history=getHistory();
+			if(output==""&&history!=""){
+				if(isNaN(history[history.length-1])){
+					history= history.substr(0,history.length-1);
+				}
+			}
+			if(output!="" || history!=""){
+				output= output==""?output:reverseNumberFormat(output);
+				history=history+output;
+				if(this.id=="="){
+					var result=eval(history);
+					printOutput(result);
+					printHistory("");
+				}
+				else{
+					history=history+this.id;
+					printHistory(history);
+					printOutput("");
+				}
+			}
+		}
+	});
+}
+
+var number = document.getElementsByClassName("number");
+for(var i =0;i<number.length;i++){
+	number[i].addEventListener('click',function(){
+		var output=reverseNumberFormat(getOutput());
+		if(!isNaN(output)){
+			output=output+this.id;
+			printOutput(output);
+		}
+	});
+}
+
+var microphone = document.getElementById('microphone');
+microphone.onclick=function(){
+	microphone.classList.add("record");
+
+	var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+	recognition.lang = 'ar-SA';
+	recognition.start();
+
+	let operations = {
+		"زائد": "+",
+		"جمع": "+",
+		"ناقص": "-",
+		"طرح": "-",
+		"ضرب": "*",
+		"في": "*",
+		"قسمة": "/",
+		"على": "/",
+		"يساوي": "="
+	};
+
+	recognition.onresult = function(event){
+		let input = event.results[0][0].transcript;
+
+		for(let word in operations){
+			input = input.replace(new RegExp(word, "g"), operations[word]);
+		}
+
+		document.getElementById("output-value").innerText = input;
+
+		setTimeout(function(){
+			evaluate(input);
+		}, 500);
+
+		microphone.classList.remove("record");
 	}
 }
-.tooltip{
-	width: 200px;
-	font-size: 9px;
-	position: absolute;
-	background-color: #dddddd;
-	color: #636363;
-	padding: 10px;
-	top: 45px;
-	transform: translateX(50px);
-	border-radius: 5px;
-	visibility: hidden;
-}
-.tooltip::before{
-	content: '';
-	position: absolute;
-	border-width: 5px;
-	border-style: solid;
-	border-color:transparent #dddddd transparent transparent;
-	left: 0;
-	margin-left: -10px;
-}
-#output-microphone:hover .tooltip{
-	visibility: visible;
-}
-#keyboard{
-	height: 400px;
-}
-.operator, .number, .empty{
-	width: 50px;
-	height: 50px;
-	margin: 15px;
-	float: left;
-	border-radius: 50%;
-	border-width: 0;
-	font-weight: bold;
-	font-size: 15px;
-}
-.number, .empty{
-	background-color: #eaedef;
-}
-.number, .operator{
-	cursor: pointer;
-}
-.operator:active, .number:active{
-	font-size: 13px;
-}
-.operator:focus, .number:focus, .empty:focus{
-	outline: 0;
-}
-button:nth-child(4){
-	font-size: 20px;
-	background-color: #20b2aa;
-}
-button:nth-child(8){
-	font-size: 20px;
-	background-color: #ffa500;
-}
-button:nth-child(12){
-	font-size: 20px;
-	background-color: #f08080;
-}
-button:nth-child(16){
-	font-size: 20px;
-	background-color: #7d93e0;
-}
-button:nth-child(20){
-	font-size: 20px;
-	background-color: #9477af;
+
+function evaluate(input){
+	try{
+		let result = eval(input);
+		document.getElementById("output-value").innerText = result;
+	}
+	catch(e){
+		document.getElementById("output-value").innerText = "";
+	}
 }
