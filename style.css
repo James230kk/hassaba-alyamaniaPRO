@@ -23,7 +23,7 @@ body {
   margin: 10px auto;
 }
 
-/* الصورة اليمنية على اليمين */
+/* الصورة اليمنية على اليمين (قصر بُكشان) */
 .asib-right {
   position: fixed;
   right: 0;
@@ -31,6 +31,7 @@ body {
   transform: translateY(-50%);
   width: 180px;
   height: 420px;
+  background-image: url("5mMasNascwUsbJbH6S8kB.jpeg");
   background-size: cover;
   background-position: center;
   border-left: 4px solid #d4af37;
@@ -38,7 +39,7 @@ body {
   box-shadow: 0 0 15px #0004;
 }
 
-/* الصورة اليمنية على اليسار */
+/* الصورة اليمنية على اليسار (المدينة الطينية) */
 .asib-left {
   position: fixed;
   left: 0;
@@ -46,6 +47,7 @@ body {
   transform: translateY(-50%);
   width: 180px;
   height: 420px;
+  background-image: url("3paCvo8ZZkgWRT1gkF8NS.jpeg");
   background-size: cover;
   background-position: center;
   border-right: 4px solid #d4af37;
