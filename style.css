@@ -23,21 +23,34 @@ body {
   margin: 10px auto;
 }
 
-/* العسيب اليمني على الجنب */
-.asib-left, .asib-right {
-  position: fixed;
-  top: 50%;
-  width: 120px;
-  transform: translateY(-50%);
-  opacity: 0.9;
-}
-
-.asib-left {
-  left: 0;
-}
-
+/* الصورة اليمنية على اليمين */
 .asib-right {
+  position: fixed;
   right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  border-left: 4px solid #d4af37;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 0 0 15px #0004;
+}
+
+/* الصورة اليمنية على اليسار */
+.asib-left {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  border-right: 4px solid #d4af37;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 0 15px #0004;
 }
 
 /* الحاوية */
