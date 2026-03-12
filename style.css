@@ -152,3 +152,41 @@ button:hover, .operator:hover, .number:hover {
   border: none;
   cursor: default;
 }
+
+/* دعم الجوال */
+@media (max-width: 600px) {
+
+  /* إخفاء الصور اليمنية */
+  .asib-right,
+  .asib-left {
+    display: none;
+  }
+
+  /* تصغير الإطار الذهبي */
+  .gold-frame {
+    width: 90%;
+    padding: 15px;
+    border-width: 8px;
+  }
+
+  /* تصغير النصوص */
+  .frame-top-text {
+    font-size: 22px;
+  }
+
+  .frame-bottom-text {
+    font-size: 18px;
+  }
+
+  /* تصغير الآلة */
+  #calculator {
+    width: 100%;
+    padding: 15px;
+  }
+
+  /* تصغير الأزرار */
+  button, .operator, .number, .empty {
+    height: 55px;
+    font-size: 20px;
+  }
+}
