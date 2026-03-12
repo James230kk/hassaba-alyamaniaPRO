@@ -20,7 +20,7 @@ body {
 #calculator {
   background: #ffffff;
   padding: 20px;
-  width: 350px;
+  width: 360px;
   border-radius: 12px;
   border: 3px solid #d4af37; /* ذهبي */
   box-shadow: 0 0 15px #0003;
@@ -46,7 +46,7 @@ body {
   min-height: 35px;
   border-radius: 6px;
   color: #0f5132;
-  font-size: 26px;
+  font-size: 28px;
   text-align: left;
   margin-top: 10px;
 }
@@ -76,6 +76,15 @@ body {
   0% { box-shadow: 0 0 0px #d4af37; }
   50% { box-shadow: 0 0 15px #d4af37; }
   100% { box-shadow: 0 0 0px #d4af37; }
+}
+
+/* التولتيب */
+.tooltip {
+  display: block;
+  font-size: 13px;
+  color: #444;
+  margin-top: 10px;
+  line-height: 1.5;
 }
 
 /* لوحة الأزرار */
@@ -109,13 +118,4 @@ button:hover, .operator:hover, .number:hover {
   background: transparent;
   border: none;
   cursor: default;
-}
-
-/* التولتيب */
-.tooltip {
-  display: block;
-  font-size: 13px;
-  color: #444;
-  margin-top: 10px;
-  line-height: 1.5;
 }
