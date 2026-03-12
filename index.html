@@ -3,82 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الآلة الحاسبة اليمنية</title>
+    <title>الحسّابة اليمنية</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- صورة اليمن على اليمين -->
-    <div class="asib-right"></div>
+    <div class="gold-frame">
 
-    <!-- صورة اليمن على اليسار -->
-    <div class="asib-left"></div>
+        <div class="frame-top-text">الحسّابة اليمنية</div>
 
-    <!-- علم اليمن -->
-    <img class="flag" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Yemen.svg" alt="علم اليمن">
+        <div id="container">
+            <div id="calculator">
 
-    <!-- زخرفة يمنية فوق -->
-    <img class="decor-top" src="https://i.postimg.cc/3J0tq4bC/decor.png" alt="زخرفة">
+                <div id="result">
+                    <div id="output-text">
+                        <div id="history">
+                            <p id="history-value"></p>
+                        </div>
 
-    <h1>الآلة الحاسبة اليمنية</h1>
-
-    <div id="container">
-        <div id="calculator">
-
-            <div id="result">
-                <div id="output-text">
-                    <div id="history">
-                        <p id="history-value"></p>
+                        <div id="output">
+                            <p id="output-value"></p>
+                        </div>
                     </div>
 
-                    <div id="output">
-                        <p id="output-value"></p>
+                    <div id="output-microphone">
+                        <span id="microphone"></span>
+
+                        <span class="tooltip">
+                            العمليات المدعومة: زائد، ناقص، ضرب، قسمة، باقي القسمة<br><br>
+                            مثال: ٢ ضرب ٥ = ٢ × ٥
+                        </span>
                     </div>
                 </div>
 
-                <div id="output-microphone">
-                    <span id="microphone"></span>
+                <div id="keyboard">
+                    <button class="operator" id="clear">C</button>
+                    <button class="operator" id="backspace">CE</button>
+                    <button class="operator" id="%">%</button>
+                    <button class="operator" id="/">÷</button>
 
-                    <span class="tooltip">
-                        العمليات المدعومة: زائد، ناقص، ضرب، قسمة، باقي القسمة<br><br>
-                        مثال: ٢ ضرب ٥ = ٢ × ٥
-                    </span>
+                    <button class="number" id="7">7</button>
+                    <button class="number" id="8">8</button>
+                    <button class="number" id="9">9</button>
+                    <button class="operator" id="*">×</button>
+
+                    <button class="number" id="4">4</button>
+                    <button class="number" id="5">5</button>
+                    <button class="number" id="6">6</button>
+                    <button class="operator" id="-">-</button>
+
+                    <button class="number" id="1">1</button>
+                    <button class="number" id="2">2</button>
+                    <button class="number" id="3">3</button>
+                    <button class="operator" id="+">+</button>
+
+                    <button class="empty"></button>
+                    <button class="number" id="0">0</button>
+                    <button class="empty"></button>
+                    <button class="operator" id="=">=</button>
                 </div>
+
             </div>
-
-            <div id="keyboard">
-                <button class="operator" id="clear">C</button>
-                <button class="operator" id="backspace">CE</button>
-                <button class="operator" id="%">%</button>
-                <button class="operator" id="/">÷</button>
-
-                <button class="number" id="7">7</button>
-                <button class="number" id="8">8</button>
-                <button class="number" id="9">9</button>
-                <button class="operator" id="*">×</button>
-
-                <button class="number" id="4">4</button>
-                <button class="number" id="5">5</button>
-                <button class="number" id="6">6</button>
-                <button class="operator" id="-">-</button>
-
-                <button class="number" id="1">1</button>
-                <button class="number" id="2">2</button>
-                <button class="number" id="3">3</button>
-                <button class="operator" id="+">+</button>
-
-                <button class="empty"></button>
-                <button class="number" id="0">0</button>
-                <button class="empty"></button>
-                <button class="operator" id="=">=</button>
-            </div>
-
         </div>
-    </div>
 
-    <!-- زخرفة يمنية تحت -->
-    <img class="decor-bottom" src="https://i.postimg.cc/3J0tq4bC/decor.png" alt="زخرفة">
+        <div class="frame-bottom-text">صنع محمد مازن</div>
+
+    </div>
 
     <script src="script.js"></script>
 
