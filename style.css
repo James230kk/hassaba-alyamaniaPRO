@@ -1,6 +1,6 @@
 /* خلفية صنعانية */
 body {
-  font-family: "Cairo", "Amiri", sans-serif;
+  font-family: "Cairo", sans-serif;
   background: #f3efe2;
   direction: rtl;
   text-align: center;
@@ -9,11 +9,42 @@ body {
   color: #2e2e2e;
 }
 
+/* علم اليمن */
+.flag {
+  width: 170px;
+  border: 3px solid #d4af37;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+/* زخارف يمنية فوق وتحت */
+.decor-top, .decor-bottom {
+  width: 260px;
+  margin: 10px auto;
+}
+
+/* العسيب اليمني على الجنب */
+.asib-left, .asib-right {
+  position: fixed;
+  top: 50%;
+  width: 120px;
+  transform: translateY(-50%);
+  opacity: 0.9;
+}
+
+.asib-left {
+  left: 0;
+}
+
+.asib-right {
+  right: 0;
+}
+
 /* الحاوية */
 #container {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 /* صندوق الآلة */
@@ -22,7 +53,7 @@ body {
   padding: 20px;
   width: 360px;
   border-radius: 12px;
-  border: 3px solid #d4af37; /* ذهبي */
+  border: 3px solid #d4af37;
   box-shadow: 0 0 15px #0003;
 }
 
